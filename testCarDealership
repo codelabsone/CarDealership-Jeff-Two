@@ -59,6 +59,6 @@ cars.each do |car|
    color = car[1]
    price = car[2]
       if(model == inputmodel)
-        puts "The car is a #{color} #{model} priced at #{price}\n"
+        puts "The car is a #{color} #{model.capitalize} priced at #{price}\n"
 end
 end
