@@ -1,3 +1,4 @@
+inputcolor = "red"
 cars = Array.new
 cars = [
   ["escape", "red", "15K"],
@@ -28,4 +29,12 @@ cars = [
   ["fiesta", "black", "25K"],
   ["fiesta", "white", "25K"]
 ]
-puts cars[13]
+#puts cars[13]
+
+cars.each do |car|
+   model = car[0]
+   color = car[1]
+      if(color == inputcolor)
+        puts "The car is a #{color} #{model}\n"
+end
+end
