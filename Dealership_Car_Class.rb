@@ -1,3 +1,22 @@
+class Cars
+  def initialize (make, color, price)
+    @make = make
+    @color = color
+    @price = price
+  end
+
+  def to_s
+    "Model = #{@make.capitalize}, Color = #{@color}, Price = #{@price}"
+  end
+end
+
+class Fleet
+  def initialize (vehicle)
+    @vehicle[]
+  end
+
+  def add_vehicle
+end
 
 cars = Array.new
 cars = [
