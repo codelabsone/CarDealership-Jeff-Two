@@ -1,6 +1,4 @@
-inputcolor = "red"
-ford = Array.new
-cars = [
+$cars = [
   ["ford", "escape", "red", "15K", ""],
   ["ford", "escape", "black", "15K", ""],
   ["ford", "escape", "white", "15K", ""],
@@ -56,13 +54,3 @@ cars = [
   ["chevy", "camaro", "black", "25K", ""],
   ["chevy", "camaro", "white", "25K", ""],
 ]
-
-cars.each do |car|
-   make = cars[0]
-   model = cars[1]
-   color = cars[2]
-   price = cars[3]
-      if(color == inputcolor)
-        puts "The car is a #{color} #{model}\n"
-end
-end

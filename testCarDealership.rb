@@ -1,4 +1,5 @@
 
+
 cars = Array.new
 cars = [
   ["escape", "red", "15K"],
@@ -30,35 +31,38 @@ cars = [
   ["fiesta", "white", "25K"]
 ]
 
+
+require_relative 'database.rb'
+#cars = IO.read('database.rb')
+
 puts"\n"
 puts " Car Dealer Manager (CDM) ".center(100,'#')
 require 'readline'
-
+cars = $cars
 def input(prompt="", newline=false)
   prompt += "\n" if newline
   Readline.readline(prompt, true).squeeze(" ").strip
 end
 
-user_prompt = input "\n*** Please Select one of the Following... *** \n Enter '1' for fiesta. \n Enter '2' for escape \n Enter '3' for focus \n Enter 'Exit' To Quit. "
+user_prompt = input "\n*** Please Select one of the Following... *** \n Enter '1' for Ford. \n Enter '2' for Chevy \n Enter 'Exit' To Quit. "
 puts"\n"
 if user_prompt == "1"
-   inputmodel = "fiesta"
+   inputmake = "ford"
  elsif user_prompt == "2"
-   inputmodel = "escape"
- elsif user_prompt == "3"
-   inputmodel =  "focus"
+   inputmake = "chevy"
  elsif user_prompt == "Exit"
  system("exit")
 else
- puts "**** ERROR Please Enter 1, 2 or 3 ****"
+ puts "**** ERROR Please Enter 1 or 2 ****"
  system("ruby app.rb")
  end
 
 cars.each do |car|
-   model = car[0]
-   color = car[1]
-   price = car[2]
-      if(model == inputmodel)
-        puts "The car is a #{color} #{model.capitalize} priced at #{price}\n"
+   make = car[0]
+   model = car[1]
+   color = car[2]
+   price = car[3]
+      if(make == inputmake)
+        puts "The car is a #{color} #{make} #{model.capitalize} priced at #{price}\n"
 end
 end
