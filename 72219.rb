@@ -30,18 +30,14 @@ cars = [
   ["fiesta", "white", "25K"],
   ["honda", "white", "25K"]
 ]
-​
 puts"\n"
 puts " Car Dealer Manager (CDM) ".center(100,'#')
 require 'readline'
-​
 def input(prompt="", newline=false)
   prompt += "\n" if newline
   Readline.readline(prompt, true).squeeze(" ").strip
 end
-​
 puts "\n*** Please Select one of the Following... *** \n"
-​
 i = 1
 matches = 0
 models = Array.new
@@ -56,7 +52,6 @@ cars.each do |car|
     end
 end
 userinput1 = input
-​
 userinput = models.values_at(userinput1.to_i - 1)
 #puts userinput.class
 cars.each do |car|
@@ -69,8 +64,6 @@ cars.each do |car|
       end
 end
 #puts matches
-​
-​
  # if userinput1 != (1..matches)
  #    puts "*ERROR Please Enter..."
  #    (1.. matches - 1).each do
@@ -79,4 +72,3 @@ end
  #     puts "or #{matches}"
  #     #puts "\n"
  # end
-Collapse
