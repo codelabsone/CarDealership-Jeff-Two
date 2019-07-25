@@ -1,11 +1,30 @@
-inputcolor = "red"
+class Cars
+  def initialize (make, color, price)
+    @make = make
+    @color = color
+    @price = price
+  end
+
+  def to_s
+    "Model = #{@make.capitalize}, Color = #{@color}, Price = #{@price}"
+  end
+end
+
+class Fleet
+  def initialize (vehicle)
+    @vehicle[]
+  end
+
+  def add_vehicle
+end
+
 cars = Array.new
 cars = [
   ["escape", "red", "15K"],
   ["escape", "black", "15K"],
   ["escape", "white", "15K"],
   ["escape", "red", "20K"],
-  ["escape", "black", "20K"],
+  ["escape" "black", "20K"],
   ["escape", "white", "20K"],
   ["escape", "red", "25K"],
   ["escape", "black", "25K"],
@@ -27,56 +46,38 @@ cars = [
   ["fiesta", "white", "20K"],
   ["fiesta", "red", "25K"],
   ["fiesta", "black", "25K"],
-  ["fiesta", "white", "25K"],
-  ["honda", "white", "25K"]
+  ["fiesta", "white", "25K"]
 ]
-​
+
 puts"\n"
 puts " Car Dealer Manager (CDM) ".center(100,'#')
 require 'readline'
-​
+
 def input(prompt="", newline=false)
   prompt += "\n" if newline
   Readline.readline(prompt, true).squeeze(" ").strip
 end
-​
-puts "\n*** Please Select one of the Following... *** \n"
-​
-i = 1
-matches = 0
-models = Array.new
-cars.each do |car|
-  model = car[0]
-  models_array = models.include?(model)
-    if (models_array != true)
-      models.push(model)
-      puts "Enter #{i} for #{model}. \n"
-      matches += 1
-      i += 1
-    end
-end
-userinput1 = input
-​
-userinput = models.values_at(userinput1.to_i - 1)
-#puts userinput.class
+
+user_prompt = input "\n*** Please Select one of the Following... *** \n Enter '1' for fiesta. \n Enter '2' for escape \n Enter '3' for focus \n Enter 'Exit' To Quit. "
+puts"\n"
+if user_prompt == "1"
+   inputmodel = "fiesta"
+ elsif user_prompt == "2"
+   inputmodel = "escape"
+ elsif user_prompt == "3"
+   inputmodel =  "focus"
+ elsif user_prompt == "Exit"
+ system("exit")
+else
+ puts "**** ERROR Please Enter 1, 2 or 3 ****"
+ system("ruby app.rb")
+ end
+
 cars.each do |car|
    model = car[0]
    color = car[1]
    price = car[2]
-     #puts models.values_at(input.to_i)
-      if model == userinput[0]
+      if(model == inputmodel)
         puts "The car is a #{color} #{model.capitalize} priced at #{price}\n"
-      end
 end
-#puts matches
-​
-​
- # if userinput1 != (1..matches)
- #    puts "*ERROR Please Enter..."
- #    (1.. matches - 1).each do
- #       |n| print "#{n}, "
- #     end
- #     puts "or #{matches}"
- #     #puts "\n"
- # end
-Collapse
+end
