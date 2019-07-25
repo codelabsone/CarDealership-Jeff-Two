@@ -33,5 +33,19 @@ cars.each do |car|
    price = car[3]
       if(make == inputmake)
         puts "The car is a #{color} #{make} #{model.capitalize} priced at #{price}\n"
-end
+        user_prompt = input "\n*** Please Select one of the Following... *** \n Enter '1' for Escape. \n Enter '2' for Focus \n Enter '3' for Fiesta \n Enter 'Exit' To Quit. "
+        puts"\n"
+        if user_prompt == "1"
+           inputmodel = "escape"
+         elsif user_prompt == "2"
+           inputmodel = "focus"
+         elsif user_prompt == "3"
+           inputmodel = "fiesta"
+         elsif user_prompt == "Exit"
+         system("exit")
+        else
+         puts "**** ERROR Please Enter 1 or 2 ****"
+         system("ruby app.rb")
+         end
+       end
 end
