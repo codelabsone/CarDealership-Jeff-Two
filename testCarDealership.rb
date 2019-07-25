@@ -1,5 +1,4 @@
 require_relative 'database.rb'
-#cars = IO.read('database.rb')
 puts"\n"
 puts " Car Dealer Manager (CDM) ".center(100,'#')
 require 'readline'
