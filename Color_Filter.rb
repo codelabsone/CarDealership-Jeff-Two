@@ -39,7 +39,7 @@ filtered_model.each do |car|
    price = car[2]
        #puts models.values_at(input.to_i)
       if color == userinput[0]
-        filtered_color.push(model, color, price)
+        filtered_color.push([model, color, price])
         puts "The car is a #{color} #{model.capitalize} priced at #{price}\n"
       end
 end
