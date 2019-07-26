@@ -27,7 +27,7 @@ cars = [
   ["fiesta", "black", "25K"],
   ["fiesta", "white", "25K"]
 ]
-<<<<<<< HEAD
+
 ​
  puts "\n"
  puts " Car Dealer Manager (CDM) ".center(100,'#')
@@ -69,7 +69,7 @@ cars = [
 puts matches
 ​
 ​
-=======
+
 puts"\n"
 puts " Car Dealer Manager (CDM) ".center(100,'#')
 require 'readline'
@@ -104,7 +104,7 @@ cars.each do |car|
       end
 end
 #puts matches
->>>>>>> 76dbc741318cd4a25685bb62d2f467061d25cd0e
+
  # if userinput1 != (1..matches)
  #    puts "*ERROR Please Enter..."
  #    (1.. matches - 1).each do
