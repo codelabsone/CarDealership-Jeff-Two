@@ -44,3 +44,7 @@ filtered_model.each do |car|
       end
 end
 puts matches
+$filtered_color=filtered_color
+if __FILE__ == $0
+  print filtered_color
+end
