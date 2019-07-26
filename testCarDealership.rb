@@ -44,7 +44,7 @@ cars.each do |car|
          elsif user_prompt == "Exit"
          system("exit")
         else
-         puts "**** ERROR Please Enter 1 or 2 ****"
+         puts "**** ERROR Please Enter 1, 2, or 3 ****"
          system("ruby app.rb")
          end
        end
