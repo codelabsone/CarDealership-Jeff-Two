@@ -27,6 +27,7 @@ cars = [
   ["fiesta", "black", "25K"],
   ["fiesta", "white", "25K"]
 ]
+<<<<<<< HEAD
 ​
  puts "\n"
  puts " Car Dealer Manager (CDM) ".center(100,'#')
@@ -68,6 +69,42 @@ cars = [
 puts matches
 ​
 ​
+=======
+puts"\n"
+puts " Car Dealer Manager (CDM) ".center(100,'#')
+require 'readline'
+def input(prompt="", newline=false)
+  prompt += "\n" if newline
+  Readline.readline(prompt, true).squeeze(" ").strip
+end
+puts "\n*** Please Select one of the Following... *** \n"
+i = 1
+matches = 0
+models = Array.new
+cars.each do |car|
+  model = car[0]
+  models_array = models.include?(model)
+    if (models_array != true)
+      models.push(model)
+      puts "Enter #{i} for #{model}. \n"
+      matches += 1
+      i += 1
+    end
+end
+userinput1 = input
+userinput = models.values_at(userinput1.to_i - 1)
+#puts userinput.class
+cars.each do |car|
+   model = car[0]
+   color = car[1]
+   price = car[2]
+     #puts models.values_at(input.to_i)
+      if model == userinput[0]
+        puts "The car is a #{color} #{model.capitalize} priced at #{price}\n"
+      end
+end
+#puts matches
+>>>>>>> 76dbc741318cd4a25685bb62d2f467061d25cd0e
  # if userinput1 != (1..matches)
  #    puts "*ERROR Please Enter..."
  #    (1.. matches - 1).each do
@@ -76,4 +113,3 @@ puts matches
  #     puts "or #{matches}"
  #     #puts "\n"
  # end
-Collapse
