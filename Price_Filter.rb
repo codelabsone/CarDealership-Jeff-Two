@@ -42,3 +42,8 @@ filtered_color.each do |price|
     end
   end
   puts matches
+
+  $filtered_prices=filtered_prices
+  if __FILE__ == $0
+    print filtered_prices
+  end
