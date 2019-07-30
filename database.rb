@@ -3,7 +3,7 @@ $cars = [
   ["ford", "escape", "black", "15K", "Compact SUV"],
   ["ford", "escape", "white", "15K", "Compact SUV"],
   ["ford", "escape", "red", "20K", "Compact SUV"],
-  ["ford", "escape" "black", "20K", "Compact SUV"],
+  ["ford", "escape", "black", "20K", "Compact SUV"],
   ["ford", "escape", "white", "20K", "Compact SUV"],
   ["ford", "escape", "red", "25K", "Compact SUV"],
   ["ford", "escape", "black", "25K", "Compact SUV"],
