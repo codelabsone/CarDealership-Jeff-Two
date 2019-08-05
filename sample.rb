@@ -1,3 +1,7 @@
+
+
+
+
 class Car
   def initialize (make, model, color, price)
     @make = make
