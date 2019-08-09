@@ -1,6 +1,5 @@
 require_relative 'inventory'
 require 'csv'
-require 'readline'
 
 class Dealer
 
@@ -9,11 +8,6 @@ class Dealer
   def initialize(dealer_title)
     @title = dealer_title
     @vehicles = []
-    #@types = []
-    #@brands = []
-    #@models =[]
-    #@colors = []
-    #@prices = []
   end
 
   def add_vehicle(a_vehicle)
@@ -37,11 +31,6 @@ class Dealer
     end
   end
 
-  #def input(prompt="", newline=false)
-  #  prompt += "\n" if newline
-  #  Readline.readline(prompt, true).squeeze(" ").strip
-  #end
-
   def i_brands
     brand = []
     @vehicles.each do |vehicle|
@@ -53,16 +42,17 @@ class Dealer
       puts "Select #{integer} for #{vehicle}.\n"
       integer +=1
     end
-    input = gets.chomp.to_i
-
-    def by_brand
-      (brand[input - 1])
+    input = gets.chomp.downcase
+    #puts "\nor type 'quit' to exit."
+    answer = brand.select { |x| x.include? input }
+    answer.each do |vehicle|
+      type = vehicle[0]
+      model = vehicle[2]
+      color = vehicle[3]
+      price = vehicle[4]
+      puts " We have a #{color} #{model} at #{price}."
     end
 
-    puts
-
-    puts "\nor type 'quit' to exit."
   end
-
 
 end
