@@ -33,7 +33,8 @@ class Dealer
 
   def i_brands
     brand = []
-    @vehicles.each do |vehicle|
+      @vehicles.each do |vehicle|
+      #puts "#{vehicle}"
       brand.push(vehicle.brand)
     end
     integer = 1
@@ -42,16 +43,42 @@ class Dealer
       puts "Select #{integer} for #{vehicle}.\n"
       integer +=1
     end
-    input = gets.chomp.downcase
+    input = gets.chomp
     #puts "\nor type 'quit' to exit."
-    answer = brand.select { |x| x.include? input }
-    answer.each do |vehicle|
-      type = vehicle[0]
-      model = vehicle[2]
-      color = vehicle[3]
-      price = vehicle[4]
-      puts " We have a #{color} #{model} at #{price}."
+    #print brand
+    #answer = brand.select { |x| x.include? input }
+if input == "1"
+  input = "Chevrolet"
+elsif input == "2"
+  input = "Ford"
+elsif input == "3"
+  input = "Honda"
+end
+
+
+puts input
+
+
+    @vehicles.each do |vehicle|
+      # puts input
+        # puts " #{vehicle.brand} #{vehicle.model}"
+      if input == vehicle.brand
+        puts " #{vehicle.brand} #{vehicle.model}"
+      end
+
+      brand.push(vehicle.brand)
     end
+
+
+
+
+    # answer.each do |vehicle|
+    #   type = vehicle[0]
+    #   model = vehicle[2]
+    #   color = vehicle[3]
+    #   price = vehicle[4]
+    #   puts " We have a #{color} #{model} at #{price}."
+    # end
 
   end
 
