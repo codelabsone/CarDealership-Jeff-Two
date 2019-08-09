@@ -1,5 +1,6 @@
 require_relative 'inventory'
 require 'csv'
+require 'readline'
 
 class Dealer
 
@@ -32,53 +33,60 @@ class Dealer
   end
 
   def i_brands
-    brand = []
-      @vehicles.each do |vehicle|
-      #puts "#{vehicle}"
-      brand.push(vehicle.brand)
-    end
+    brands = []
+    vehicles = []
     integer = 1
-    brand = brand.uniq!.sort
-    brand.each do |vehicle|
+
+    @vehicles.each do |vehicle|
+      brands.push(vehicle.brand)
+    end
+
+    @vehicles.each do |vehicle|
+      vehicles.push(vehicle)
+    end
+
+    puts "We have the following brands to choose from.\nPlease select one of the following:"
+    puts "\n"
+    brands = brands.uniq!.sort
+    brands.each do |vehicle|
       puts "Select #{integer} for #{vehicle}.\n"
       integer +=1
     end
+    puts "\n"
     input = gets.chomp
-    #puts "\nor type 'quit' to exit."
-    #print brand
-    #answer = brand.select { |x| x.include? input }
-if input == "1"
-  input = "Chevrolet"
-elsif input == "2"
-  input = "Ford"
-elsif input == "3"
-  input = "Honda"
-end
+    userinput = brands.values_at(input.to_i - 1)
+    puts userinput
+    #vehicles.each do |car|
 
+    #end
+    #answer = vehicles.select{|x| x.include?(userinput) }
+    #answer.each do |vehicle|
 
-puts input
-
-
-    @vehicles.each do |vehicle|
-      # puts input
-        # puts " #{vehicle.brand} #{vehicle.model}"
-      if input == vehicle.brand
-        puts " #{vehicle.brand} #{vehicle.model}"
-      end
-
-      brand.push(vehicle.brand)
+     puts "We have a #{vehicle.color} #{vehicle.model} for #{vehicle.price}."
     end
 
+#if input == "1"
+#  input = "Chevrolet"
+#elsif input == "2"
+#  input = "Ford"
+#elsif input == "3"
+#  input = "Honda"
+#end
+#
+#
+#puts input
+#
+#
+#    @vehicles.each do |vehicle|
+#      # puts input
+#        # puts " #{vehicle.brand} #{vehicle.model}"
+#      if input == vehicle.brand
+#        puts " #{vehicle.brand} #{vehicle.model}"
+#      end
+#
+#      brand.push(vehicle.brand)
+#    end
 
-
-
-    # answer.each do |vehicle|
-    #   type = vehicle[0]
-    #   model = vehicle[2]
-    #   color = vehicle[3]
-    #   price = vehicle[4]
-    #   puts " We have a #{color} #{model} at #{price}."
-    # end
 
   end
 
