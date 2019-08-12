@@ -4,7 +4,7 @@ require 'sqlite3'
 
 begin
 
-db = SQLite3 ::Database.open "cars.db"
+db = SQLite3::Database.open "cars.db"
 db.execute "CREATE TABLE IF NOT EXISTS Cars(Id INTEGER PRIMARY KEY,
         make TEXT, model TEXT, color TEXT, Price INT)"
 
