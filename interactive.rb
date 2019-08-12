@@ -41,10 +41,6 @@ class Dealer
       brands.push(vehicle.brand)
     end
 
-    @vehicles.each do |vehicle|
-      vehicles.push(vehicle)
-    end
-
     puts "We have the following brands to choose from.\nPlease select one of the following:"
     puts "\n"
     brands = brands.uniq!.sort
@@ -55,38 +51,14 @@ class Dealer
     puts "\n"
     input = gets.chomp
     userinput = brands.values_at(input.to_i - 1)
+
     puts userinput
-    #vehicles.each do |car|
 
-    #end
-    #answer = vehicles.select{|x| x.include?(userinput) }
-    #answer.each do |vehicle|
-
-     puts "We have a #{vehicle.color} #{vehicle.model} for #{vehicle.price}."
+    selection = @vehicles.select{|vehicle| vehicle.include? userinput }
+    selection.each do |car|
+      puts "These vehicles match your selection:"
+      puts car
     end
-
-#if input == "1"
-#  input = "Chevrolet"
-#elsif input == "2"
-#  input = "Ford"
-#elsif input == "3"
-#  input = "Honda"
-#end
-#
-#
-#puts input
-#
-#
-#    @vehicles.each do |vehicle|
-#      # puts input
-#        # puts " #{vehicle.brand} #{vehicle.model}"
-#      if input == vehicle.brand
-#        puts " #{vehicle.brand} #{vehicle.model}"
-#      end
-#
-#      brand.push(vehicle.brand)
-#    end
-
 
   end
 
