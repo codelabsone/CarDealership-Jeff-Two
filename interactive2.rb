@@ -52,7 +52,7 @@ class Dealer
     type = type.uniq!
     model = model
     puts "Type anything of the following: "
-    print brand\n
+    print brand
     print color
     print type
     print model
