@@ -1,0 +1,10 @@
+type,brand,model,color,price
+compact,honda,civic,red,19900
+sedan,honda,accord,silver,24900
+SUV,honda,CR-V,silver,24900
+pickup,ford,"F-150",blue,39900
+coupe,ford,mustang,black,34900
+crossover,ford,edge,silver,29900
+sport,chevrolet,corvette,yellow,59900
+pickup,chevrolet,silverado,green,44900
+crossover,chevrolet,traverse,black,32900
