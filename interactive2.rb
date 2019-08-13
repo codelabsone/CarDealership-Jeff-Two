@@ -81,28 +81,28 @@ puts input
       # puts input
         # puts " #{vehicle.brand} #{vehicle.model}"
       if input.downcase == vehicle.brand.downcase
-        puts " #{vehicle.color.capitalize} #{vehicle.brand} #{vehicle.model} #{vehicle.type} at #{vehicle.price}"
+        puts " #{vehicle.color.capitalize} #{vehicle.brand} #{vehicle.model} #{vehicle.type.capitalize} at #{vehicle.price}"
       end
       if input.downcase == vehicle.model.downcase
         filter_Cars.push(vehicle)
         break
       end
       if input.downcase == vehicle.color.downcase
-        puts " #{vehicle.color.capitalize} #{vehicle.brand} #{vehicle.model} #{vehicle.type} at #{vehicle.price}"
+        puts " #{vehicle.color.capitalize} #{vehicle.brand} #{vehicle.model} #{vehicle.type.capitalize} at #{vehicle.price}"
       end
       if input.downcase == vehicle.model.downcase
         filter_Cars.push(vehicle)
         break
       end
       if input.downcase == vehicle.type.downcase
-        puts " #{vehicle.color.capitalize} #{vehicle.brand} #{vehicle.model} #{vehicle.type} at #{vehicle.price}"
+        puts " #{vehicle.color.capitalize} #{vehicle.brand} #{vehicle.model} #{vehicle.type.capitalize} at #{vehicle.price}"
       end
       if input.downcase == vehicle.model.downcase
         filter_Cars.push(vehicle)
         break
       end
       if input.downcase == vehicle.model.downcase
-        puts " #{vehicle.color.capitalize} #{vehicle.brand} #{vehicle.model} #{vehicle.type} at #{vehicle.price}"
+        puts " #{vehicle.color.capitalize} #{vehicle.brand} #{vehicle.model} #{vehicle.type.capitalize} at #{vehicle.price}"
       end
       if input.downcase == vehicle.model.downcase
         filter_Cars.push(vehicle)
