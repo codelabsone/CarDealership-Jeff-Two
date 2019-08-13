@@ -10,7 +10,9 @@ class Dealer
     @title = dealer_title
     @vehicles = []
     @brands = []
-    @
+    @type = []
+    @model = []
+    @price = []
   end
 
   def add_vehicle(a_vehicle)
@@ -45,9 +47,16 @@ class Dealer
   #  vehicles = []
   #  integer = 1
 
-  #  @vehicles.each do |vehicle|
-  #    brands.push(vehicle.brand)
-  #  end
+    @vehicles.each do |vehicle|
+      @brands.push(vehicle.brand)
+      @type.push(vehicle.type)
+      @model.push(vehicle.model)
+      @color.push(vehicle.color)
+      @price.push(vehicle.price)
+    end
+
+
+    end
 
   #  @vehicles.each do |vehicle|
   #    vehicles.push(vehicle)
@@ -79,7 +88,7 @@ class Dealer
   #    end
 
   #  end
-  end
+  #end
 
 
 
