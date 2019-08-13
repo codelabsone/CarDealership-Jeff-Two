@@ -4,31 +4,36 @@ require 'sqlite3'
 
 begin
 
-<<<<<<< HEAD
 db = SQLite3::Database.open "cars.db"
-db.execute "CREATE TABLE IF NOT EXISTS Cars(Id INTEGER PRIMARY KEY,
-        make TEXT, model TEXT, color TEXT, Price INT)"
-=======
-db = SQLite3::Database.open 'cars.db'
-#db = SQLite3::Database.open "dealer.db"
-db.execute "CREATE TABLE IF NOT EXISTS Cars(make TEXT, model TEXT, color TEXT, price INT)"
->>>>>>> 05eeda1798b79343c34edb28e494885f52ee83b7
+rows = db.execute <<-SQL
+          create table if not exists vehicles(
+            id int,
+           make text,
+           model text,
+           color text,
+           price int
+         );
+        SQL
+
+puts rows
+puts rows.inspect
 
 makes = ["ford", "chevy", "toyota", "honda"]
 models = ["truck", "sedan", "SUV", "sports car"]
 colors = ["black", "red", "white", "green", "silver"]
 
-Car = Struct.new(:make, :model, :color, :price)
+Car = Struct.new(:id, :make, :model, :color, :price)
 
-rounds = 100
+rounds = 5
+id = 0
 
 1.upto(rounds) do
   vehicle = Car.new
-  vehicle.make = makes.sample
-  vehicle.model = models.sample
-  vehicle.color = colors.sample
-  vehicle.price = rand(5000..25000)
-  db.execute "INSERT INTO Cars VALUES(make, model, color, price)"
+  # vehicle.make = makes.sample
+  # vehicle.model = models.sample
+  # vehicle.color = colors.sample
+  # vehicle.price = rand(5000..25000)
+  db.execute("INSERT INTO vehicles(id, make, model, color, price) VALUES(?, ?, ?, ?, ?)", [vehicle.id = id += 1, vehicle.make = makes.sample, vehicle.model = models.sample, vehicle.color = colors.sample, vehicle.price = rand(5000..25000)])
 end
 
 rescue SQLite3::Exception => e
