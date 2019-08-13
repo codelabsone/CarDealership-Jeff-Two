@@ -34,17 +34,28 @@ class Dealer
   def i_brands
     brand = []
     color = []
+    price = []
+    type = []
+    model = []
       @vehicles.each do |vehicle|
       #puts "#{vehicle}"
       brand.push(vehicle.brand)
       color.push(vehicle.color)
+      price.push(vehicle.price)
+      type.push(vehicle.type)
+      model.push(vehicle.model)
     end
     integer = 1
     brand = brand.uniq!.sort
     color = color.uniq!.sort
-    puts "Type in brand you want, here is a list of available brands: "
-    puts brand
-    puts color
+    price = price.uniq!.sort
+    type = type.uniq!
+    model = model
+    puts "Type anything of the following: "
+    print brand
+    print color
+    print type
+    print model
     # brand.each do |vehicle|
     #   puts "Select #{integer} for #{vehicle}.\n"
     #   integer +=1
@@ -83,6 +94,23 @@ puts input
         filter_Cars.push(vehicle)
         break
       end
+      if input.downcase == vehicle.type.downcase
+        puts " #{vehicle.color.capitalize} #{vehicle.brand} #{vehicle.model}"
+      end
+      if input.downcase == vehicle.model.downcase
+        filter_Cars.push(vehicle)
+        break
+      end
+      if input.downcase == vehicle.model.downcase
+        puts " #{vehicle.color.capitalize} #{vehicle.brand} #{vehicle.model}"
+      end
+      if input.downcase == vehicle.model.downcase
+        filter_Cars.push(vehicle)
+        break
+      end
+
+
+
 
       brand.push(vehicle.brand)
     end
