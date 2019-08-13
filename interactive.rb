@@ -19,6 +19,7 @@ class Dealer
     puts @title.center(100, '=')
   end
 
+
   def greeting
     puts "\nWelcome to #{@title.strip}!\nWe have a great selection of vehicles to choose from!"
     puts "\nWhat brand of vehicle are you looking for?"
@@ -32,6 +33,11 @@ class Dealer
     end
   end
 
+  def input(prompt="", newline=false)
+    prompt += "\n" if newline
+    Readline.readline(prompt, true).squeeze(" ").strip
+  end
+
   def i_brands
     brands = []
     vehicles = []
@@ -39,6 +45,11 @@ class Dealer
 
     @vehicles.each do |vehicle|
       brands.push(vehicle.brand)
+    end
+
+    @vehicles.each do |vehicle|
+      vehicles.push(vehicle)
+      puts "#{vehicle.type}, #{vehicle.brand} #{vehicle.model} #{vehicle.color} #{vehicle.price}"
     end
 
     puts "We have the following brands to choose from.\nPlease select one of the following:"
@@ -49,17 +60,27 @@ class Dealer
       integer +=1
     end
     puts "\n"
-    input = gets.chomp
+
     userinput = brands.values_at(input.to_i - 1)
 
     puts userinput
 
-    selection = @vehicles.select{|vehicle| vehicle.include? userinput }
-    selection.each do |car|
-      puts "These vehicles match your selection:"
-      puts car
-    end
+    vehicles.each do |vehicle|
+      brand = vehicle[1]
+      model = vehicle[2]
+      color = vehicle[3]
+      price = vehicle[4].to_i
+      if vehicle == userinput[1]
+        puts "#{vehicle.color} #{vehicle.model} #{vehicle.price}"
+      else
+        puts "no matches"
+      end
 
+    end
   end
+
+
+
+
 
 end
