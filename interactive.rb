@@ -9,6 +9,8 @@ class Dealer
   def initialize(dealer_title)
     @title = dealer_title
     @vehicles = []
+    @brands = []
+    @
   end
 
   def add_vehicle(a_vehicle)
@@ -39,44 +41,44 @@ class Dealer
   end
 
   def i_brands
-    brands = []
-    vehicles = []
-    integer = 1
+  #  brands = []
+  #  vehicles = []
+  #  integer = 1
 
-    @vehicles.each do |vehicle|
-      brands.push(vehicle.brand)
-    end
+  #  @vehicles.each do |vehicle|
+  #    brands.push(vehicle.brand)
+  #  end
 
-    @vehicles.each do |vehicle|
-      vehicles.push(vehicle)
-      puts "#{vehicle.type}, #{vehicle.brand} #{vehicle.model} #{vehicle.color} #{vehicle.price}"
-    end
+  #  @vehicles.each do |vehicle|
+  #    vehicles.push(vehicle)
+  #    puts "#{vehicle.type}, #{vehicle.brand} #{vehicle.model} #{vehicle.color} #{vehicle.price}"
+  #  end
 
-    puts "We have the following brands to choose from.\nPlease select one of the following:"
-    puts "\n"
-    brands = brands.uniq!.sort
-    brands.each do |vehicle|
-      puts "Select #{integer} for #{vehicle}.\n"
-      integer +=1
-    end
-    puts "\n"
+  #  puts "We have the following brands to choose from.\nPlease select one of the following:"
+  #  puts "\n"
+  #  brands = brands.uniq!.sort
+  #  brands.each do |vehicle|
+  #    puts "Select #{integer} for #{vehicle}.\n"
+  #    integer +=1
+  #  end
+  #  puts "\n"
 
-    userinput = brands.values_at(input.to_i - 1)
+  #  userinput = brands.values_at(input.to_i - 1)
 
-    puts userinput
+  #  puts userinput
 
-    vehicles.each do |vehicle|
-      brand = vehicle[1]
-      model = vehicle[2]
-      color = vehicle[3]
-      price = vehicle[4].to_i
-      if vehicle == userinput[1]
-        puts "#{vehicle.color} #{vehicle.model} #{vehicle.price}"
-      else
-        puts "no matches"
-      end
+  #  vehicles.each do |vehicle|
+  #    brand = vehicle[1]
+  #    model = vehicle[2]
+  #    color = vehicle[3]
+  #    price = vehicle[4].to_i
+  #    if vehicle == userinput[1]
+  #      puts "#{vehicle.color} #{vehicle.model} #{vehicle.price}"
+  #    else
+  #      puts "no matches"
+  #    end
 
-    end
+  #  end
   end
 
 
