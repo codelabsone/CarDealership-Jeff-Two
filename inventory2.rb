@@ -1,4 +1,4 @@
-require_relative 'interactive'
+require_relative 'interactive2'
 
 class Vehicle
 
